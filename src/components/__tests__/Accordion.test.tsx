@@ -68,7 +68,7 @@ describe('<Accordion />', () => {
       fireEvent.click(titleEl);
       fireEvent.click(titleEl);
 
-      const currentListEl = titleEl.closest('li') as HTMLLIElement;
+      const currentListEl = titleEl.closest('li');
 
       expect(currentListEl).not.toHaveClass('active');
     });

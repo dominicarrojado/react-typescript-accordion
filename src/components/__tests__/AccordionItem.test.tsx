@@ -21,7 +21,7 @@ describe('<AccordionItem />', () => {
     );
 
     const titleEl = screen.queryByText(title);
-    const contentEl = screen.queryByText(title);
+    const contentEl = screen.queryByText(content);
 
     expect(titleEl).toBeInTheDocument();
     expect(contentEl).toBeInTheDocument();
@@ -30,19 +30,16 @@ describe('<AccordionItem />', () => {
   it('should not display content if isOpen is false', () => {
     const contentScrollHeight = faker.datatype.number({ min: 1 });
 
-    jest.spyOn(hooks, 'getRefValue').mockReturnValue({
-      scrollHeight: contentScrollHeight,
-    });
+    jest
+      .spyOn(hooks, 'getRefValue')
+      .mockReturnValue({ scrollHeight: contentScrollHeight });
 
     const title = faker.lorem.sentence();
     const content = faker.lorem.sentences();
 
     render(
       <AccordionItem
-        data={{
-          title,
-          content,
-        }}
+        data={{ title, content }}
         isOpen={false}
         btnOnClick={jest.fn()}
       />
@@ -60,19 +57,16 @@ describe('<AccordionItem />', () => {
   it('should display content if isOpen is true', () => {
     const contentScrollHeight = faker.datatype.number({ min: 1 });
 
-    jest.spyOn(hooks, 'getRefValue').mockReturnValue({
-      scrollHeight: contentScrollHeight,
-    });
+    jest
+      .spyOn(hooks, 'getRefValue')
+      .mockReturnValue({ scrollHeight: contentScrollHeight });
 
     const title = faker.lorem.sentence();
     const content = faker.lorem.sentences();
 
     render(
       <AccordionItem
-        data={{
-          title,
-          content,
-        }}
+        data={{ title, content }}
         isOpen={true}
         btnOnClick={jest.fn()}
       />
@@ -97,10 +91,7 @@ describe('<AccordionItem />', () => {
 
     render(
       <AccordionItem
-        data={{
-          title,
-          content,
-        }}
+        data={{ title, content }}
         isOpen={faker.datatype.boolean()}
         btnOnClick={btnOnClickMock}
       />
