@@ -58,7 +58,13 @@ function App() {
 
   return (
     <div className="container">
+      <h1>React TypeScript Accordion</h1>
       <Accordion items={accordionItems} />
+      <footer className="footer">
+        <a href="https://dominicarrojado.com/posts/how-to-create-your-own-accordion-in-react-and-typescript-with-tests/">
+          Learn how to build this accordion in React and TypeScript
+        </a>
+      </footer>
     </div>
   );
 }
