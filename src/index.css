@@ -11,3 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
 }
+
+.adsbygoogle[data-ad-status='unfilled'] {
+  display: none !important;
+}
